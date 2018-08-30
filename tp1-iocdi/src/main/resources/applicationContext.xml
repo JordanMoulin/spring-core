@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="feedbackConsole" class="com.formation.service.FeedbackToConsole"/>
+	<bean id="userInteraction" class="com.formation.user.UserInteraction">
+		<property name="feedback" ref="feedbackConsole" />
+	</bean>
+</beans>

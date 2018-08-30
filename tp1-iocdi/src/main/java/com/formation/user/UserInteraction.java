@@ -2,14 +2,13 @@ package com.formation.user;
 
 import java.text.MessageFormat;
 
-import com.formation.service.FeedbackFactory;
+import com.formation.service.IFeedback;
 
 /**
  * Class to make interactions with the user
  */
 public class UserInteraction {
-	// private IFeedback feedback;
-	private FeedbackFactory factory;
+	private IFeedback feedback;
 
 	public UserInteraction() {
 		// feedback = factory.getFeedback();
@@ -21,7 +20,7 @@ public class UserInteraction {
 	 * @param name
 	 */
 	public void sayHello(String name) {
-		factory.getFeedback().say(MessageFormat.format("Hello {0} !", name));
+		feedback.say(MessageFormat.format("Hello {0} !", name));
 	}
 
 	/**
@@ -30,10 +29,10 @@ public class UserInteraction {
 	 * @param name
 	 */
 	public void sayGoodBye(String name) {
-		factory.getFeedback().say(MessageFormat.format("Goodbye {0} !", name));
+		feedback.say(MessageFormat.format("Goodbye {0} !", name));
 	}
 
-	public void setFactory(FeedbackFactory factory) {
-		this.factory = factory;
+	public void setFeedback(IFeedback feedback) {
+		this.feedback = feedback;
 	}
 }
