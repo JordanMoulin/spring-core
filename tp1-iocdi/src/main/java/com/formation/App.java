@@ -1,7 +1,7 @@
 package com.formation;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.formation.user.UserInteraction;
 
@@ -14,7 +14,7 @@ public class App {
 		String name = "Jordan";
 
 		// ApplicationContext applicationContext = new
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 		UserInteraction interaction = applicationContext.getBean(UserInteraction.class);
 		interaction.sayHello(name);
 		interaction.sayGoodBye(name);
