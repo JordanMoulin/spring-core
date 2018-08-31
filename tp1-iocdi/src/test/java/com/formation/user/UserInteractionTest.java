@@ -4,8 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -20,8 +19,8 @@ qui permettront d'avoir le contexte Spring correct dans nos test*/
  */
 @RunWith(SpringRunner.class)
 public class UserInteractionTest {
-	ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-	UserInteraction interaction = applicationContext.getBean(UserInteraction.class);
+	@Autowired
+	private UserInteraction interaction;
 
 	@Test
 	public void captainage() {
