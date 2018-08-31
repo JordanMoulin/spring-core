@@ -15,7 +15,6 @@ public class UserInteraction {
 	private IFeedback feedback;
 
 	public UserInteraction() {
-		// feedback = factory.getFeedback();
 	}
 
 	/**
@@ -34,6 +33,10 @@ public class UserInteraction {
 	 */
 	public void sayGoodBye(String name) {
 		feedback.say(MessageFormat.format("Goodbye {0} !", name));
+	}
+
+	public int sayTheCaptainAgeForAFamousThreeMast() {
+		return feedback.giveMeTheCaptainAge(10, 3);
 	}
 
 	@Autowired
